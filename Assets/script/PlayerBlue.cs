@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerBlue : MonoBehaviour
 {
-    public GameObject arrowPrefab, arrowPrefab2;
+    public GameObject arrowPrefab, arrowPrefab2,menu;
     public float moveSpeed;
     float jumpForce;
     public GameObject attackCollider;
@@ -18,6 +18,9 @@ public class PlayerBlue : MonoBehaviour
     SpriteRenderer mySr;
 
     public bool isJumpPressed, isAttack, isHurt, canBeHurt;//�Ƿ�����Ծ������
+
+    public AudioClip[] myAudioClip;
+    AudioSource myAudioSource;
     public int canJump;
 
     public bool canDash = true;
@@ -34,6 +37,7 @@ public class PlayerBlue : MonoBehaviour
         myAnim = GetComponent<Animator>();
         myRigi = GetComponent<Rigidbody2D>();
         mySr = GetComponent<SpriteRenderer>();
+        myAudioSource = GetComponent<AudioSource>();
 
         isJumpPressed = false;
         canJump = 2;
@@ -51,7 +55,12 @@ public class PlayerBlue : MonoBehaviour
         canBigFire = 3;
     }
 
-
+        void end_game()
+    {
+            Time.timeScale=0;
+            menu.SetActive(true);
+        
+    }
     void Update()
     {
 
@@ -71,6 +80,7 @@ public class PlayerBlue : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Keypad2) && canJump>0 && !isHurt)       //��Ծ��⣬�ڶ�����ͬ
         {
+            myAudioSource.PlayOneShot(myAudioClip[1]);
             moveSpeed = 8 ;
             moveSpeed = 10;
             canDash = false;
@@ -88,11 +98,13 @@ public class PlayerBlue : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Keypad1) && !isHurt)//��ͬ
         {
+
             canBigFire++;
             myAnim.SetTrigger("Attack");
             isAttack = true;
             canProtect = true;
             //canJump = false;
+            myAudioSource.PlayOneShot(myAudioClip[2]);
         }
         if (Input.GetKeyDown(KeyCode.Keypad3) && canDash)
         {
@@ -137,11 +149,11 @@ public class PlayerBlue : MonoBehaviour
         Vector2 position = myRigi.position;//��¼��ʼλ��
         bool rtemp = true;
         bool ltemp = true;
-        if (position.x - targetPos.x > 30)
+        if (position.x - targetPos.x > 32)
         {
             rtemp = false;
         }
-        else if (targetPos.x - position.x > 30)
+        else if (targetPos.x - position.x > 32)
         {
             ltemp = false;
         }
@@ -193,6 +205,7 @@ public class PlayerBlue : MonoBehaviour
     {
         if ((collision.tag == "Water"))
         {
+           
             playerLife = 0;
             isHurt = true;
             moveSpeed = 0;
@@ -225,6 +238,7 @@ public class PlayerBlue : MonoBehaviour
                 moveSpeed = 0;
                 myAnim.SetBool("Die", true);
                 StartCoroutine("AfterDie");
+
             }
         }
     }
@@ -242,11 +256,13 @@ public class PlayerBlue : MonoBehaviour
     {
         if ((collision.tag == "Water"))
         {
+            
             playerLife = 0;
             isHurt = true;
             moveSpeed = 0;
             myAnim.SetBool("Die", true);
             StartCoroutine("AfterDie");
+
         }
         if ((collision.tag == "Enemy" || collision.CompareTag("Trap")) && !isHurt && canBeHurt)
         {

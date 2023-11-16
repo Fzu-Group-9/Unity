@@ -5,10 +5,15 @@ using UnityEngine;
 public class GroundControl : MonoBehaviour
 {
     public float Speed = 4;
-
+    
     void Update()
     {
-        if(Speed<=12)
+        /*if(!BluePlayer.alive)
+        {
+            Speed = 0;
+            return;
+        }*/
+        if (Speed<=12)
             Speed += 1*Time.deltaTime/5;
         else if(Speed >= 12 && Speed <= 20)
             Speed += 1*Time.deltaTime/10;

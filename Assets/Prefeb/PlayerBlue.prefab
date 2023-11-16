@@ -102,8 +102,9 @@ GameObject:
   - component: {fileID: 5581982746209669841}
   - component: {fileID: 5359307717627264243}
   - component: {fileID: 2004185784948473003}
-  - component: {fileID: 376234703258864136}
   - component: {fileID: 450473434241751988}
+  - component: {fileID: 6712994117978511320}
+  - component: {fileID: -8275692460185920242}
   m_Layer: 6
   m_Name: PlayerBlue
   m_TagString: Player
@@ -242,31 +243,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &376234703258864136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7135630847039976335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b2a737bac71f5d49a6756bd1e92453e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arrowPrefab: {fileID: 7842234168710134933, guid: 073b06410a3c6f146b6587d04fbd563c, type: 3}
-  arrowPrefab2: {fileID: 7245467712744907329, guid: a88edd208de4a684d81d6c8752cddd2b, type: 3}
-  moveSpeed: 0
-  attackCollider: {fileID: 7240006150723671729}
-  target: {fileID: 0}
-  playerLife: 0
-  myAnim: {fileID: 0}
-  isJumpPressed: 0
-  isAttack: 0
-  isHurt: 0
-  canBeHurt: 0
-  canJump: 0
-  canDash: 1
 --- !u!95 &450473434241751988
 Animator:
   serializedVersion: 5
@@ -288,6 +264,131 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!82 &6712994117978511320
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7135630847039976335}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &-8275692460185920242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7135630847039976335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b2a737bac71f5d49a6756bd1e92453e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowPrefab: {fileID: 7842234168710134933, guid: 073b06410a3c6f146b6587d04fbd563c, type: 3}
+  arrowPrefab2: {fileID: 7245467712744907329, guid: a88edd208de4a684d81d6c8752cddd2b, type: 3}
+  moveSpeed: 0
+  attackCollider: {fileID: 7240006150723671729}
+  target: {fileID: 651736880757143761, guid: 14f4272c627337343bdc2f4f8fc4b785, type: 3}
+  playerLife: 0
+  myAnim: {fileID: 0}
+  isJumpPressed: 0
+  isAttack: 0
+  isHurt: 0
+  canBeHurt: 0
+  myAudioClip:
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
+  - {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
+  canJump: 0
+  canDash: 1
 --- !u!1 &7240006150723671729
 GameObject:
   m_ObjectHideFlags: 0

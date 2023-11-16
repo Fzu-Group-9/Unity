@@ -14,4 +14,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hill.unity
     guid: dbf2dead787a601428b694801357728a
+  - enabled: 1
+    path: Assets/Scenes/RUNNING.unity
+    guid: 03835bfacc593ed419953f161301ec30
+  - enabled: 1
+    path: "Assets/Scenes/\u5173\u5361\u9009\u62E9.unity"
+    guid: e2c1f4e4bcd5d8240b540bd266562d49
+  - enabled: 1
+    path: "Assets/Scenes/\u83DC\u5355\u754C\u9762.unity"
+    guid: 2098b322bc137f441928033201ca9bbd
+  - enabled: 1
+    path: "Assets/Scenes/\u6682\u505C.unity"
+    guid: d8ccb2b5aa66c3f45a9964742bd24059
+  - enabled: 1
+    path: "Assets/Scenes/\u5192\u9669.unity"
+    guid: d9d43bcf229f8d0448797249e1ca7fb4
+  - enabled: 1
+    path: "Assets/Scenes/\u8DD1\u9177.unity"
+    guid: 40ab0e7e170726e4db9f470fa0392ee0
   m_configObjects: {}
