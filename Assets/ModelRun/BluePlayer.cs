@@ -5,9 +5,10 @@ using UnityEngine;
 public class BluePlayer : MonoBehaviour
 {
     public GameObject BodyCollider;
+    public static bool alive;
     public int canJump = 2;
-    public float jumpForce = 8f;
-    public float jumpDown = 4f;
+    public float jumpForce = 18f;
+    public float jumpDown = 40f;
     public bool isJumpPressed, canDash, isDashing;
     public Animator myAnim;
     private Vector3 originPosition;
@@ -19,15 +20,25 @@ public class BluePlayer : MonoBehaviour
         myAnim = GetComponent<Animator>();
         myRigi = GetComponent<Rigidbody2D>();
         originPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        alive = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (!alive)
+        {
+            return;
+        }
+        originPosition = new Vector3(originPosition.x, transform.position.y, transform.position.z);
         if (transform.position.x < originPosition.x) 
         {
-            transform.position = Vector3.MoveTowards(transform.position, originPosition, 4 * Time.deltaTime);
+            if (originPosition.x - transform.position.x > 10f) 
+            {
+                myAnim.SetTrigger("Die");
+                alive = false;
+            }
+            transform.position = Vector3.MoveTowards(transform.position, originPosition, 1 * Time.deltaTime);
         }
         if (Input.GetKeyDown(KeyCode.Keypad2) && canJump > 0)  
         {
@@ -44,7 +55,7 @@ public class BluePlayer : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Keypad3) && !canDash) 
         {
-            myRigi.AddForce(Vector2.down * jumpDown, ForceMode2D.Impulse);
+            myRigi.velocity = Vector2.down * jumpDown;
         }
         if (Input.GetKeyDown(KeyCode.Keypad3) && canDash)
         {
@@ -69,7 +80,8 @@ public class BluePlayer : MonoBehaviour
         }
         if (isJumpPressed) 
         {
-            myRigi.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                myRigi.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            
             isJumpPressed = false;
             myAnim.SetBool("Jump", true);
         }
@@ -82,5 +94,12 @@ public class BluePlayer : MonoBehaviour
     {
         BodyCollider.SetActive(false);
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Trap")
+        {
+            myAnim.SetTrigger("Die");
+            alive = false;
+        }
+    }
 }

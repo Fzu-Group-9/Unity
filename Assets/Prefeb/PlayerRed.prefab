@@ -189,13 +189,17 @@ MonoBehaviour:
   arrowPrefab2: {fileID: 7245467712744907329, guid: a88edd208de4a684d81d6c8752cddd2b, type: 3}
   moveSpeed: 0
   attackCollider: {fileID: 4996870524987647385}
-  target: {fileID: 0}
+  target: {fileID: 6865734404668892045, guid: 3881a3ebaf801074ea79bc3db65cf65c, type: 3}
   playerLife: 0
   myAnim: {fileID: 0}
   isJumpPressed: 0
   isAttack: 1
   isHurt: 0
   canBeHurt: 0
+  myAudioClip:
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
+  - {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
   canJump: 0
   canDash: 1
 --- !u!1 &4996870524987647385

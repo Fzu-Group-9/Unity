@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerRed : MonoBehaviour
 {
-    public GameObject arrowPrefab, arrowPrefab2;
+    public GameObject arrowPrefab, arrowPrefab2,menu;
     public float moveSpeed;
     float jumpForce;
     public GameObject attackCollider;
@@ -19,6 +19,9 @@ public class PlayerRed : MonoBehaviour
     SpriteRenderer mySr;
 
     public bool isJumpPressed, isAttack, isHurt, canBeHurt;//�Ƿ�����Ծ������
+
+    public AudioClip [] myAudioClip;
+    AudioSource myAudioSource;
     public int canJump;
 
     public bool canDash = true;
@@ -35,6 +38,7 @@ public class PlayerRed : MonoBehaviour
         myAnim = GetComponent<Animator>();
         myRigi = GetComponent<Rigidbody2D>();
         mySr = GetComponent<SpriteRenderer>();
+        myAudioSource = GetComponent<AudioSource>();
 
         isJumpPressed = false;
         canJump = 2;
@@ -51,7 +55,13 @@ public class PlayerRed : MonoBehaviour
         HealthBar.HealthCurrent = playerLife;
         canBigFire = 3;
     }
-
+    void end_game()
+    {
+            Time.timeScale=0;
+            menu.SetActive(true);
+        
+    }
+    
 
     void Update()
     {
@@ -70,6 +80,7 @@ public class PlayerRed : MonoBehaviour
         }
         if (Input.GetKeyDown("k") && canJump>0 && !isHurt)        //��Ծ��⣬�ڶ�����ͬ
         {
+            myAudioSource.PlayOneShot(myAudioClip[1]);
             moveSpeed = 8;
             moveSpeed = 10;
             canDash = false;
@@ -88,10 +99,12 @@ public class PlayerRed : MonoBehaviour
         }
         if (Input.GetKeyDown("j") && !isHurt)//��ͬ
         {
+           
             canBigFire++;
             myAnim.SetTrigger("Attack");
             isAttack = true;
             canProtect = true;
+            myAudioSource.PlayOneShot(myAudioClip[2]);
         }
         if (Input.GetKeyDown("l") && canDash)
         {
@@ -136,11 +149,11 @@ public class PlayerRed : MonoBehaviour
         Vector2 position = myRigi.position;//��¼��ʼλ��
         bool rtemp = true;
         bool ltemp = true;
-        if (position.x - targetPos.x > 30)
+        if (position.x - targetPos.x > 32)
         {
             rtemp = false;
         }
-        else if (targetPos.x - position.x > 30)
+        else if (targetPos.x - position.x > 32)
         {
             ltemp = false;
         }
