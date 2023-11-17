@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Enemy
+  - PlayerAttack
+  - Trap
+  - Player1
+  - Water
+  - Interactable
   layers:
   - Default
   - TransparentFX
@@ -12,9 +18,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Player
+  - Ground
+  - Player1
   - 
   - 
   - 
@@ -53,6 +59,9 @@ TagManager:
     locked: 0
   - name: DecorationPlus
     uniqueID: 3935762323
+    locked: 0
+  - name: waterfall
+    uniqueID: 2113508153
     locked: 0
   - name: Ground
     uniqueID: 2821851385
