@@ -149,11 +149,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6865734404668892045, guid: 3881a3ebaf801074ea79bc3db65cf65c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.78
+      value: 35.31
       objectReference: {fileID: 0}
     - target: {fileID: 6865734404668892045, guid: 3881a3ebaf801074ea79bc3db65cf65c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 24.67
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 6865734404668892045, guid: 3881a3ebaf801074ea79bc3db65cf65c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -197,7 +197,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6865734404668892045, guid: 3881a3ebaf801074ea79bc3db65cf65c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1988063480}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3881a3ebaf801074ea79bc3db65cf65c, type: 3}
 --- !u!1 &18486117 stripped
@@ -1773,8 +1776,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5074038610751603075, guid: cc70dff458a2ad943a23c62aa0d24544, type: 3}
       propertyPath: npcText
-      value: "\u90AA\u6076\u6CD5\u5E08\u6709\u4E24\u4E2A\u6280\u80FD \u6325\u821E\u5927\u5200\u9700\u8981\u8EB2\u5230\u80CC\u540E
-        \u91CA\u653E\u6CD5\u672F\u9700\u8981\u8EB2\u5230\u7A7A\u4E2D"
+      value: Kill the Monster !
       objectReference: {fileID: 0}
     - target: {fileID: 5074038610751603075, guid: cc70dff458a2ad943a23c62aa0d24544, type: 3}
       propertyPath: dialogueBox
@@ -1786,7 +1788,7 @@ PrefabInstance:
       objectReference: {fileID: 1105880605}
     - target: {fileID: 6607842419768766589, guid: cc70dff458a2ad943a23c62aa0d24544, type: 3}
       propertyPath: m_Name
-      value: npc (2)
+      value: npc 2
       objectReference: {fileID: 0}
     - target: {fileID: 7606651718553292926, guid: cc70dff458a2ad943a23c62aa0d24544, type: 3}
       propertyPath: m_LocalPosition.x
@@ -53384,7 +53386,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SWITCH LEVELS
+  m_Text: LEVELS
 --- !u!222 &1065965490
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -62659,7 +62661,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.029356956, y: -1.2329686}
+  m_Offset: {x: -0.088350296, y: -1.1493969}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -62670,7 +62672,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9412861, y: 1.1174254}
+  m_Size: {x: 0.5873375, y: 1.2845688}
   m_EdgeRadius: 0
 --- !u!1001 &1336921204
 PrefabInstance:
@@ -63457,11 +63459,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9375, y: 1.6875}
   m_EdgeRadius: 0
---- !u!4 &1773553620 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7606651718553292926, guid: cc70dff458a2ad943a23c62aa0d24544, type: 3}
-  m_PrefabInstance: {fileID: 712775528795092995}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1786546387
 GameObject:
   m_ObjectHideFlags: 0
@@ -64420,6 +64417,97 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1988063477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1988063480}
+  - component: {fileID: 1988063479}
+  - component: {fileID: 1988063478}
+  m_Layer: 0
+  m_Name: signs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1988063478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988063477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a26a9414f6db5b41a4a03c4107d5d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signSprite: {fileID: 0}
+--- !u!61 &1988063479
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988063477}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.018066406, y: -1.2329686}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.60263824, y: 1.1174254}
+  m_EdgeRadius: 0
+--- !u!4 &1988063480
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988063477}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.05, y: 0.13, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1965705728}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2039661514
 GameObject:
   m_ObjectHideFlags: 0
@@ -65302,7 +65390,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BACK TO MENU
+  m_Text: MENU
 --- !u!222 &2067223055
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -65321,11 +65409,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 651736880757143761, guid: 14f4272c627337343bdc2f4f8fc4b785, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 35.969994
+      value: 37.49999
       objectReference: {fileID: 0}
     - target: {fileID: 651736880757143761, guid: 14f4272c627337343bdc2f4f8fc4b785, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 24.71
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 651736880757143761, guid: 14f4272c627337343bdc2f4f8fc4b785, type: 3}
       propertyPath: m_LocalPosition.z
@@ -65444,7 +65532,6 @@ Transform:
   - {fileID: 1896464152}
   - {fileID: 77610498}
   - {fileID: 1865022148}
-  - {fileID: 1773553620}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2118501462
@@ -65558,8 +65645,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2104941822}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5074038610751603075, guid: cc70dff458a2ad943a23c62aa0d24544, type: 3}
+      propertyPath: npcText
+      value: Welcome to the Forest !
+      objectReference: {fileID: 0}
     - target: {fileID: 5074038610751603075, guid: cc70dff458a2ad943a23c62aa0d24544, type: 3}
       propertyPath: dialogueBox
       value: 
@@ -65582,11 +65673,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7606651718553292926, guid: cc70dff458a2ad943a23c62aa0d24544, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.65
+      value: 43.75
       objectReference: {fileID: 0}
     - target: {fileID: 7606651718553292926, guid: cc70dff458a2ad943a23c62aa0d24544, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.07
+      value: 23.57
       objectReference: {fileID: 0}
     - target: {fileID: 7606651718553292926, guid: cc70dff458a2ad943a23c62aa0d24544, type: 3}
       propertyPath: m_LocalPosition.z
@@ -66159,6 +66250,7 @@ SceneRoots:
   - {fileID: 1186423849}
   - {fileID: 1336921204}
   - {fileID: 1973843515}
+  - {fileID: 712775528795092995}
   - {fileID: 784780358}
   - {fileID: 2104941822}
   - {fileID: 3158608726123114027}

@@ -145,5 +145,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 0}
   dialogueText: {fileID: 0}
-  npcText: "\u6B22\u8FCE\u6765\u5230\u68EE\u6797\uFF0C \u51FB\u6740\u90AA\u6076\u6CD5\u5E08\uFF0C
-    \u9003\u79BB\u8FD9\u91CC\uFF01\uFF01\uFF01"
+  npcText: Welcome to forest! Kill the monster and escape from here!
