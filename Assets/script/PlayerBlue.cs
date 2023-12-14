@@ -32,6 +32,8 @@ public class PlayerBlue : MonoBehaviour
     int canCure;
     bool canProtect;
     int canBigFire;
+    int attackType;
+
     private void Awake()
     {
         myAnim = GetComponent<Animator>();
@@ -53,6 +55,7 @@ public class PlayerBlue : MonoBehaviour
         HealthBar1.HealthMax = playerLife;
         HealthBar1.HealthCurrent = playerLife;
         canBigFire = 3;
+        attackType = 1;
     }
 
         void end_game()
@@ -100,7 +103,16 @@ public class PlayerBlue : MonoBehaviour
         {
 
             canBigFire++;
-            myAnim.SetTrigger("Attack");
+            if (attackType == 1)
+            {
+                myAnim.SetTrigger("Attack");
+                attackType = 2;
+            }
+            else
+            {
+                myAnim.SetTrigger("AttackPro");
+                attackType = 1;
+            }
             isAttack = true;
             canProtect = true;
             //canJump = false;

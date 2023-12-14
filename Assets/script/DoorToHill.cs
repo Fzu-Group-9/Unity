@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class DoorToHill : MonoBehaviour
 {
+    public GameObject menu;
     public static bool canOpen;
     void Start()
     {
@@ -20,7 +21,8 @@ public class DoorToHill : MonoBehaviour
     {
         if ((collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Player1")) && canOpen)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Time.timeScale=0;
+            menu.SetActive(true);
         }
     }
 }

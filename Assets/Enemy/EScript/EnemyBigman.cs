@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyBigman : MonoBehaviour
 {
+    public GameObject menu;
     public Vector3 targetPosition;
     public float attentionDistance;
     public float mySpeed;
@@ -37,6 +38,12 @@ public class EnemyBigman : MonoBehaviour
     void Update()
     {
         MoveAndAttack();
+    }
+        void end_game()
+    {
+            Time.timeScale=0;
+            menu.SetActive(true);
+        
     }
     void MoveAndAttack()
     {
@@ -81,7 +88,7 @@ public class EnemyBigman : MonoBehaviour
                     turnPoint = originPosition;
                 }
             }
-            else//Íæ¼ÒÀë¿ª¹ÖÎï»Ö¸´Ô­±¾·½Ïò
+            else//ï¿½ï¿½ï¿½ï¿½ë¿ªï¿½ï¿½ï¿½ï¿½Ö¸ï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             {
                 mySpeed = 3;
                 if (isAfterBattleCheck)

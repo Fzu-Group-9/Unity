@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "MicrosoftYaHeiUI-02";
+    src: url("MicrosoftYaHeiUI-02.eot"); /* IE9 */
+    src: url("MicrosoftYaHeiUI-02.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    
+    url("MicrosoftYaHeiUI-02.woff") format("woff"), /* chrome、firefox */
+    url("MicrosoftYaHeiUI-02.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    
+    url("MicrosoftYaHeiUI-02.svg#MicrosoftYaHeiUI-02") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+
+

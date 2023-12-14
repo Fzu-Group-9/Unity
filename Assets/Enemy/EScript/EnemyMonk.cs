@@ -111,7 +111,7 @@ public class EnemyMonk : MonoBehaviour
                 }
 
             }
-            else//Íæ¼ÒÀë¿ª¹ÖÎï»Ö¸´Ô­±¾·½Ïò
+            else//ï¿½ï¿½ï¿½ï¿½ë¿ªï¿½ï¿½ï¿½ï¿½Ö¸ï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             {
                 if (isAfterBattleCheck)
                 {
@@ -221,6 +221,7 @@ public class EnemyMonk : MonoBehaviour
                 myCollider.enabled = false;
                 myAnim.SetTrigger("Die");
                 StartCoroutine("AfterDie");
+                DoorToHill.canOpen = true;
             }
         }
     }

@@ -33,6 +33,7 @@ public class PlayerRed : MonoBehaviour
     int canCure;
     bool canProtect;
     int canBigFire;
+    int attackType;
     private void Awake()
     {
         myAnim = GetComponent<Animator>();
@@ -54,6 +55,7 @@ public class PlayerRed : MonoBehaviour
         HealthBar.HealthMax = playerLife;
         HealthBar.HealthCurrent = playerLife;
         canBigFire = 3;
+        attackType = 1;
     }
     void end_game()
     {
@@ -101,7 +103,16 @@ public class PlayerRed : MonoBehaviour
         {
            
             canBigFire++;
-            myAnim.SetTrigger("Attack");
+            if (attackType == 1)
+            {
+                myAnim.SetTrigger("Attack");
+                attackType = 2;
+            }
+            else
+            {
+                myAnim.SetTrigger("AttackPro");
+                attackType = 1;
+            }
             isAttack = true;
             canProtect = true;
             myAudioSource.PlayOneShot(myAudioClip[2]);

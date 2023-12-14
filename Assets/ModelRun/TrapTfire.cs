@@ -8,7 +8,7 @@ public class TrapTfire : MonoBehaviour
     int fireMax=5;
     float disPerArrowX;
     float disPerArrowY;
-
+    bool canTrap;
     public bool rightWay;
 
     bool canFire;
@@ -17,6 +17,7 @@ public class TrapTfire : MonoBehaviour
         canFire = false;
         disPerArrowX = 3f;
         disPerArrowY = 1f;
+        canTrap = true;
     }
 
     // Update is called once per frame
@@ -29,6 +30,10 @@ public class TrapTfire : MonoBehaviour
     }
     void Shoot()
     {
+        if(!canTrap)
+        {
+            return;
+        }
         canFire = false;
         if (rightWay)
         {
@@ -53,6 +58,7 @@ public class TrapTfire : MonoBehaviour
             temp = new Vector3(transform.position.x + 27f + disPerArrowX * (5 - i), transform.position.y + disPerArrowY * i, transform.position.z);
             Instantiate(arrowPrefab, temp, transform.rotation);
             fireCount--;
+            canTrap = false;
         }
         else
         {
@@ -77,6 +83,7 @@ public class TrapTfire : MonoBehaviour
             temp = new Vector3(transform.position.x + 27f + disPerArrowX * i, transform.position.y + disPerArrowY * i, transform.position.z);
             Instantiate(arrowPrefab, temp, transform.rotation);
             fireCount--;
+            canTrap = false;
         }
         
     }
