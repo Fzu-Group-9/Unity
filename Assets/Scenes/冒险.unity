@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 373125102}
   - component: {fileID: 373125101}
   m_Layer: 5
-  m_Name: next
+  m_Name: "\u7EE7\u7EED"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

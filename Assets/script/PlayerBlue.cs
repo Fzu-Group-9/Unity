@@ -62,6 +62,7 @@ public class PlayerBlue : MonoBehaviour
     {
             Time.timeScale=0;
             menu.SetActive(true);
+            myAudioSource.PlayOneShot(myAudioClip[0]);
         
     }
     void Update()

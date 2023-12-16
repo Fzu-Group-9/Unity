@@ -28,6 +28,12 @@ public class RedPlayer : MonoBehaviour
         alive = true;
     }
 
+            void end_game()
+    {
+            Time.timeScale=0;
+            menu.SetActive(true);
+        
+    }
     // Update is called once per frame
     void Update()
     {

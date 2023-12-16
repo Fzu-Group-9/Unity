@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyBoss : MonoBehaviour
 {
+    public AudioClip[] myAudioClip;
+    AudioSource myAudioSource;
     public GameObject menu;
     public Vector3 targetPosition;
     public float mySpeed;
@@ -18,6 +20,7 @@ public class EnemyBoss : MonoBehaviour
     Rigidbody2D myRigi;
     private void Awake()
     {
+        myAudioSource = GetComponent<AudioSource>();
         myAnim = GetComponent<Animator>();
         myCollider = GetComponent<BoxCollider2D>();
         myRigi = GetComponent<Rigidbody2D>();
@@ -38,6 +41,7 @@ public class EnemyBoss : MonoBehaviour
     }
     void end_game()
     {
+            myAudioSource.PlayOneShot(myAudioClip[0]);
             Time.timeScale=0;
             menu.SetActive(true);
         

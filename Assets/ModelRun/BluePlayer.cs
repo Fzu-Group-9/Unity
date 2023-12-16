@@ -26,6 +26,12 @@ public class BluePlayer : MonoBehaviour
         originPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         alive = true;
     }
+            void end_game()
+    {
+            Time.timeScale=0;
+            menu.SetActive(true);
+        
+    }
 
     // Update is called once per frame
     void Update()
@@ -112,4 +118,5 @@ public class BluePlayer : MonoBehaviour
             alive = false;
         }
     }
+
 }
