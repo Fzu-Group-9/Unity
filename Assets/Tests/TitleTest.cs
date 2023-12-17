@@ -60,13 +60,5 @@ public class TitleTest
         // 跳转到跑酷模式
         Assert.AreEqual("跑酷", SceneManager.GetActiveScene().name); 
 
-        // GameObject buttonObject4 = GameObject.Find("继续"); 
-        // Button Button4 = buttonObject4.GetComponent<Button>();
-        // Button4.onClick.Invoke();
-
-        // yield return new WaitForSeconds(1); // 等待1秒，确保场景切换完成
-
-        // // 跳转到RUNNING
-        // Assert.AreEqual("RUNNING", SceneManager.GetActiveScene().name);         
     }
 }
